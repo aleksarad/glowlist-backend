@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hex: MyString
+  look_id: 1
+
+two:
+  hex: MyString
+  look_id: 1
