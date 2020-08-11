@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_08_05_233930) do
     t.string "name"
     t.string "description"
     t.string "finished_look", default: ""
+    t.string "background_image", default: ""
+    t.string "background_color", default: ""
     t.string "colors", default: [], array: true
     t.boolean "completed", default: false
     t.integer "user_id"

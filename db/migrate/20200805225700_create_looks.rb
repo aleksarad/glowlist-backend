@@ -4,6 +4,8 @@ class CreateLooks < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.string :finished_look, default: ''
+      t.string :background_image, default: ''
+      t.string :background_color, default: ''
       t.string :colors, array: true, default: []
       t.boolean :completed, default: false
       t.integer :user_id

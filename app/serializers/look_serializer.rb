@@ -1,4 +1,3 @@
 class LookSerializer < ActiveModel::Serializer
-  belongs_to :user
-  attributes :id, :name, :description, :"", :completed, :sketch
+  attributes :id, :name, :description, :finished_look, :background_color, :background_image, :colors, :completed, :sketch, :user_id
 end
