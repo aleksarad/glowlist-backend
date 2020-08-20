@@ -9,7 +9,7 @@ class AuthController < ApplicationController
           token = encode_token(payload)
           render json: {user: user, token: token, success: "Welcome back, #{user.username}"}
       else
-          render json: {failure: "Log in failed! username or password invalid!"}
+          render json: {error: "incorrect username or password, please try again"}
       end
     end
   

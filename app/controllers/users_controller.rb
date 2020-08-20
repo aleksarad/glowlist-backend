@@ -21,7 +21,7 @@ class UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: {user: user, token: token}
           else
-            render json: { error: "Invalid username or password" }, status: 400
+            render json: { error: "username, password, and facechart can't be empty" }, status: 400
         end
     end
 
