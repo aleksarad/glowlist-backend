@@ -2,7 +2,11 @@ class LooksController < ApplicationController
 
     def create
         look = Look.create(look_params)
-        render json: look
+        if look.valid?
+            render json: look
+        else 
+            render json: {error: look.errors.full_messages}
+        end
     end
 
     def destroy
@@ -15,7 +19,11 @@ class LooksController < ApplicationController
     def update
         look = Look.find(params[:id])
         look.update(look_params)
-        render json: look
+        if look.valid?
+            render json: look
+        else 
+            render json: {error: look.errors.full_messages}
+        end
     end
 
     private

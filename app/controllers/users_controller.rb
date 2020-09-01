@@ -21,7 +21,7 @@ class UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: {user: user, token: token}
           else
-            render json: { error: "username, password, and facechart can't be empty" }, status: 400
+            render json: {error: user.errors.full_messages}
         end
     end
 
@@ -34,7 +34,11 @@ class UsersController < ApplicationController
     def update
         user = User.find(params[:id])
         user.update(user_params)
-        render json: user
+        if user.valid?
+            render json: {user: user}
+          else
+            render json: {error: user.errors.full_messages}
+        end
     end
 
     private

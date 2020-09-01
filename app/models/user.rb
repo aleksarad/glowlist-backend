@@ -8,5 +8,8 @@ class User < ApplicationRecord
     validates :facechart, presence: true
     validates :background_color, presence: true
 
+    validates :username, length: { in: 1..16 }
+    validates :password, length: { in: 1..16 }
+
     accepts_nested_attributes_for :looks
 end
